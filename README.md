@@ -3,9 +3,8 @@
 A feature-rich **Calculator App** built using Python and **Tkinter** — designed to replicate the modern Windows Calculator with:
 
 - ✅ Basic and scientific operations
-- 🌞 Light / 🌙 Dark mode toggle
 - ⌨️ Keyboard input support
-- 🖱️ Clean, modern GUI with rounded buttons
+- 🖱️ Clean, modern GUI with buttons
 
 ---
 
@@ -19,7 +18,6 @@ A feature-rich **Calculator App** built using Python and **Tkinter** — designe
 
 - Basic operations: `+`, `-`, `*`, `/`, `%`, `=`, `⌫`, `C`
 - Scientific operations: `1/x`, `x²`, `√`, `+/-`
-- Light/Dark theme toggle 🌗
 - Responsive keyboard input
 - Windows Calculator-like layout
 
