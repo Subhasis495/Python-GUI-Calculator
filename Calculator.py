@@ -4,14 +4,23 @@ import math
 root = tk.Tk()
 root.title("Calculator")
 root.geometry("360x520")
-root.configure(bg="white")
+root.configure(bg="#121212")     # Dark background for the whole window
 root.resizable(False, False)
 
 expression = ""
 input_text = tk.StringVar()
 
-entry = tk.Entry(root, textvariable=input_text, font=('Segoe UI', 26),
-                 bg="white", fg="black", bd=0, justify='right')
+# Green screen (entry box) with dark text
+entry = tk.Entry(
+    root,
+    textvariable=input_text,
+    font=('Segoe UI', 26),
+    bg="#00b050",        # Green background
+    fg="white",          # White text for contrast
+    bd=0,
+    justify='right',
+    insertbackground="white"   # Cursor color
+)
 entry.pack(fill="both", ipadx=8, ipady=20, padx=10, pady=(10, 0))
 
 
@@ -38,15 +47,30 @@ def press(btn):
         expression = "Error"
     input_text.set(expression)
 
-def create_btn(frame, text, color="#f0f0f0", fg="black", w=5, h=2):
-    return tk.Button(frame, text=text, font=('Segoe UI', 14), width=w, height=h,
-                     bg=color, fg=fg, bd=0, relief=tk.FLAT, command=lambda: press(text))
+
+def create_btn(frame, text, color="#1e1e1e", fg="white", w=5, h=2):
+    # Default dark buttons with white text
+    return tk.Button(
+        frame,
+        text=text,
+        font=('Segoe UI', 14),
+        width=w,
+        height=h,
+        bg=color,
+        fg=fg,
+        bd=0,
+        relief=tk.FLAT,
+        activebackground="#333333",
+        activeforeground="white",
+        command=lambda: press(text)
+    )
 
 
-memory_frame = tk.Frame(root, bg="white")
+# Memory buttons frame
+memory_frame = tk.Frame(root, bg="#121212")
 memory_frame.pack(pady=5)
 for m in ['MC', 'MR', 'M+', 'M-', 'MS', 'Mv']:
-    create_btn(memory_frame, m, color="#f9f9f9", fg="gray", w=6).pack(side='left', padx=2)
+    create_btn(memory_frame, m, color="#1e1e1e", fg="gray", w=6).pack(side='left', padx=2)
 
 buttons = [
     ['%', 'CE', 'C', '⌫'],
@@ -57,17 +81,21 @@ buttons = [
     ['+/-', '0', '.', '=']
 ]
 
-btns_frame = tk.Frame(root, bg="white")
+btns_frame = tk.Frame(root, bg="#121212")
 btns_frame.pack(pady=5)
 
 for row in buttons:
-    row_frame = tk.Frame(btns_frame, bg="white")
+    row_frame = tk.Frame(btns_frame, bg="#121212")
     row_frame.pack(expand=True, fill='both')
     for btn in row:
         if btn == '=':
-            create_btn(row_frame, btn, color="#4ccfff", fg="white", w=6).pack(side='left', expand=True, fill='both', padx=2, pady=2)
+            create_btn(row_frame, btn, color="#4ccfff", fg="black", w=6).pack(
+                side='left', expand=True, fill='both', padx=2, pady=2
+            )
         else:
-            create_btn(row_frame, btn, w=6).pack(side='left', expand=True, fill='both', padx=2, pady=2)
+            create_btn(row_frame, btn, color="#1e1e1e", fg="white", w=6).pack(
+                side='left', expand=True, fill='both', padx=2, pady=2
+            )
 
 
 def key(event):
@@ -80,5 +108,4 @@ def key(event):
 
 
 root.bind("<Key>", key)
-
 root.mainloop()
