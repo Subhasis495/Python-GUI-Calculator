@@ -10,7 +10,7 @@ A feature-rich **Calculator App** built using Python and **Tkinter** — designe
 
 ## 🖼️ Preview
 
-![screenshot](screenshot.jpg)  
+![screenshot](Screenshot.png)  
 
 ---
 
