@@ -4,22 +4,21 @@ import math
 root = tk.Tk()
 root.title("Calculator")
 root.geometry("360x520")
-root.configure(bg="#121212")     # Dark background for the whole window
+root.configure(bg="#121212")    
 root.resizable(False, False)
 
 expression = ""
 input_text = tk.StringVar()
 
-# Green screen (entry box) with dark text
 entry = tk.Entry(
     root,
     textvariable=input_text,
     font=('Segoe UI', 26),
-    bg="#00b050",        # Green background
-    fg="white",          # White text for contrast
+    bg="#00b050",        
+    fg="white",          
     bd=0,
     justify='right',
-    insertbackground="white"   # Cursor color
+    insertbackground="white"   
 )
 entry.pack(fill="both", ipadx=8, ipady=20, padx=10, pady=(10, 0))
 
@@ -66,7 +65,6 @@ def create_btn(frame, text, color="#1e1e1e", fg="white", w=5, h=2):
     )
 
 
-# Memory buttons frame
 memory_frame = tk.Frame(root, bg="#121212")
 memory_frame.pack(pady=5)
 for m in ['MC', 'MR', 'M+', 'M-', 'MS', 'Mv']:
