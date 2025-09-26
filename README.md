@@ -10,7 +10,7 @@ A feature-rich **Calculator App** built using Python and **Tkinter** — designe
 
 ## 🖼️ Preview
 
-![screenshot](screenshot.jpg)  <!-- Replace with actual screenshot if hosted -->
+![screenshot](screenshot.jpg)  
 
 ---
 
@@ -25,8 +25,9 @@ A feature-rich **Calculator App** built using Python and **Tkinter** — designe
 
 ## 📦 Requirements
 
-- Python 3.x  
-- Tkinter (comes pre-installed with Python)
+```bash
+pip install tkinter
+```  
 
 ---
 
@@ -37,4 +38,6 @@ A feature-rich **Calculator App** built using Python and **Tkinter** — designe
 3. Run the script:
 
 ```bash
+git clone https://github.com/Subhasis495/Python-GUI-Calculator.git
+cd calculator.py
 python calculator.py
